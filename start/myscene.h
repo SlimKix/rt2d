@@ -9,9 +9,15 @@
 #ifndef MYSCENE_H
 #define MYSCENE_H
 
+#include <vector>
 #include <rt2d/scene.h>
+#include <rt2d/text.h>
+#include "beyblade.h"
+#include "controller.h"
+#include "collider.h"
+#include "joystick.h"
 
-#include "myentity.h"
+
 
 /// @brief The MyScene class is the Scene implementation.
 class MyScene : public Scene
@@ -27,9 +33,18 @@ public:
 	/// @return void
 	virtual void update(float deltaTime);
 
+protected:
+	//unsigned int top_layer;
+	//std::vector<MyEntity*> layers;
+	Text* text;
+	float angle;
+
 private:
 	/// @brief the rotating square in the middle of the screen
-	MyEntity* myentity;
+	BeyBlade* beyBlade;
+	Controller* controller1;
+
+
 	/// @brief a Timer to rotate the color every n seconds
 	Timer t;
 };

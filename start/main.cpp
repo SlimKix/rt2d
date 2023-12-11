@@ -22,7 +22,7 @@ int main( void )
 {
 	// Core instance
 	Core core;
-
+	
 	// Scene01
 	MyScene* myscene = new MyScene(); // create Scene on the heap
 	while(myscene->isRunning()) { // check status of Scene every frame

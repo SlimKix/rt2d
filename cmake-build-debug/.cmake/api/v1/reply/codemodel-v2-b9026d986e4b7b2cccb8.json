@@ -1,0 +1,279 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						16
+					]
+				},
+				{
+					"build" : "external",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external-Debug-d8969718d56d94ae4e32.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "external",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "external/glfw-3.3",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.glfw-3.3-Debug-a9e2dbfedf2378a15cca.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "external/glfw-3.3",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "external/glfw-3.3/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.glfw-3.3.src-Debug-30174953c65231816fde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "external/glfw-3.3/src",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "rt2d",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						16
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8,
+						15
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "GLEW_190::@89556154f30252d09d22",
+					"jsonFile" : "target-GLEW_190-Debug-1aea398db8732dd46809.json",
+					"name" : "GLEW_190",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic3D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic3D-Debug-f80753982d3453f44380.json",
+					"name" : "basic3D",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "canvasdemo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-canvasdemo-Debug-0d08475c08cd84d7d532.json",
+					"name" : "canvasdemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "collision::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-collision-Debug-18ed2a20b9d28925f946.json",
+					"name" : "collision",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "debugdraw::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-debugdraw-Debug-3e0c01751b18a585be10.json",
+					"name" : "debugdraw",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-demo-Debug-db48f37fe0e95d7e1a12.json",
+					"name" : "demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "flocking::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-flocking-Debug-db957af67baec7c9a7a1.json",
+					"name" : "flocking",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "geometric::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-geometric-Debug-e215408df6ec5537926f.json",
+					"name" : "geometric",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glfw::@d23da7579923f4053477",
+					"jsonFile" : "target-glfw-Debug-4d86459c7cea722e9e3b.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "matrixpixel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-matrixpixel-Debug-75fca5b6967a2a764a4c.json",
+					"name" : "matrixpixel",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "noise::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-noise-Debug-0dbf7f4e4600b8f19690.json",
+					"name" : "noise",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "raycast::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-raycast-Debug-d3f7adf12f869a2cca5d.json",
+					"name" : "raycast",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rt2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rt2d-Debug-4de96bed19320f4b79fb.json",
+					"name" : "rt2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "slimshady::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-slimshady-Debug-a877b5e3bb2c4ad1147c.json",
+					"name" : "slimshady",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "start::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-start-Debug-dc13c83df5f25be56d4f.json",
+					"name" : "start",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@5c6fae512c97cb0a3c06",
+					"jsonFile" : "target-uninstall-Debug-e3350dbc701a2e852570.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wolfenstein::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wolfenstein-Debug-16317c375455627d6d80.json",
+					"name" : "wolfenstein",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Hamza/OneDrive - ROC Alfa-college/Documenten/rt2d/cmake-build-debug",
+		"source" : "C:/Users/Hamza/OneDrive - ROC Alfa-college/Documenten/rt2d"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

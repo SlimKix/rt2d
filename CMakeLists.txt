@@ -1,5 +1,5 @@
 # CMake entry point
-cmake_minimum_required (VERSION 3.5)
+cmake_minimum_required (VERSION 2.8.12)
 project (rt2d)
 
 # delete CMakeCache.txt from the build directory when you edit these options
@@ -154,10 +154,14 @@ file(
 IF(MAKE_START)
 	add_executable(start
 		start/main.cpp
-		start/myentity.cpp
-		start/myentity.h
+		start/beyblade.cpp
+		start/beyblade.h
 		start/myscene.cpp
 		start/myscene.h
+		start/controller.h
+		start/controller.cpp
+		start/joystick.h
+		start/joystick.cpp
 	)
 	target_link_libraries(start
 		${ALL_GRAPHICS_LIBS}
@@ -572,5 +576,3 @@ IF(MAKE_BOX2DSTART AND USE_BOX2D)
 		${ALL_GRAPHICS_LIBS}
 	)
 ENDIF()
-
-####################################################################

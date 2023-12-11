@@ -1,4 +1,4 @@
-/**
+  /**
  * This class describes MyScene behavior.
  *
  * Copyright 2019 Rik Teerling <rik@onandoffables.com>
