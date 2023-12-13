@@ -7,22 +7,41 @@ Vector2 yAccel = Vector2(0, 400.0f);
 Vector2 xAccel = Vector2(400.0f, 0);
 
 
-Controller::Controller() : Entity()
+Controller::Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey) : Entity()
 {
 	
 	Line c1;
 	c1.createCircle(50, 18);
 	this->addLine(&c1);
+
+    Line c2;
+	c2.createCircle(128, 18);
+	this->addLine(&c2);
 	
 	joyStick = new JoyStick;
 	this->addChild(joyStick);
 	joyStick->scale = Point2(1, 1);
+
+
+    upKey_ = upKey;
+    leftKey_ = leftKey;
+    downKey_ = downKey;
+    rightKey_ = rightKey;
+
+    /*beyBlade = new BeyBlade();
+    beyBlade->position = Point2(SWIDTH / 3 * 2.5, SHEIGHT / 2);
+    this->addChild(beyBlade);*/
 
 }
 
 Controller::~Controller()
 {
 
+}
+
+void Controller::SetBeyBlade(BeyBlade* bb)
+{
+    this->beyBlade = bb;
 }
 
 void Controller::update(float deltaTime)
@@ -37,16 +56,16 @@ void Controller::update(float deltaTime)
     }
 
     // Handling user input
-    if (input()->getKey(KeyCode::Up)) {
+    if (input()->getKey(upKey_)) {
         joyStick->position -= yAccel * deltaTime;
     }
-    if (input()->getKey(KeyCode::Left)) {
+    if (input()->getKey(leftKey_)) {
         joyStick->position -= xAccel * deltaTime;
     }
-    if (input()->getKey(KeyCode::Down)) {
+    if (input()->getKey(downKey_)) {
         joyStick->position += yAccel * deltaTime;
     }
-    if (input()->getKey(KeyCode::Right)) {
+    if (input()->getKey(rightKey_)) {
         joyStick->position += xAccel * deltaTime;
     }
 
@@ -84,10 +103,17 @@ void Controller::update(float deltaTime)
         increaseRotation = true;
       
     }
+    if (increaseRotation)
+    {
+        beyBlade->rotationSpeed += 0.10;
+    }
+
+    std::cout << "rotation speed" << beyBlade->rotationSpeed;
 
 
     // Ball goes random direction constantly
-   angle = static_cast<float>(rand()) / RAND_MAX * 2 * PI;
+    //angle = static_cast<float>(rand()) / RAND_MAX * 2 * PI;
+    angle = static_cast<float>(rand()) / RAND_MAX * 2 * PI;
 
 
     joyStick->position.x += 3000 * cos(angle) * deltaTime;
@@ -114,6 +140,7 @@ void Controller::update(float deltaTime)
   //  std::cout << joyStick->position ;
 	
 }
+
 
 
 	

@@ -42,7 +42,9 @@ protected:
 private:
 	/// @brief the rotating square in the middle of the screen
 	BeyBlade* beyBlade;
+	BeyBlade* beyBlade1;
 	Controller* controller1;
+	Controller* controller2;
 
 
 	/// @brief a Timer to rotate the color every n seconds

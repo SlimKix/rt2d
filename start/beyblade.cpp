@@ -13,12 +13,18 @@
 
 	Vector2 bSize = this->sprite()->size;
 
-	 srand(time(0));
-	 int x = (rand() % SWIDTH * 2) - SWIDTH;
-	 int y = (rand() % SHEIGHT * 2) - SHEIGHT;
+	srand(time(0));
+
+	float angle = static_cast<float>(rand() % 70) / 10;
+
+	float speed = 1000.0f;
+
+	 
+	 int x = speed * cos(angle);
+	 int y = speed * sin(angle);
 	 velocity = Vector2(x, y);
-	 rotationSpeed = 10.0f;
-	 friction = -0.1;
+	 rotationSpeed = 2.0f;
+	 friction = 1;
 	 
 }
  
@@ -31,7 +37,7 @@ BeyBlade::~BeyBlade()
 void BeyBlade::update(float deltaTime)
 {
 	this->rotation.z += HALF_PI * rotationSpeed * deltaTime;
-	rotationSpeed += friction *deltaTime;
+	rotationSpeed -= friction *deltaTime;
 	if (rotationSpeed <= 0) {
 		rotationSpeed = 0;
 	}

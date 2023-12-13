@@ -17,15 +17,15 @@ MyScene::MyScene() : Scene()
 
 	// start the timer.
 	t.start();
-	float newWidth = SWIDTH;
-	std::cout << "Player clicks: " << newWidth << std::endl;
-	controller1 = new Controller;
-	Line c1;
-	c1.createCircle(128, 18);
-	controller1->addLine(&c1);
+	controller1 = new Controller(KeyCode::Up, KeyCode::Left, KeyCode::Down, KeyCode::Right);
+	
 	this->addChild(controller1);
 	controller1->position = Point2(SWIDTH/4*3, SHEIGHT/4*3);
 
+	controller2 = new Controller(KeyCode::W, KeyCode::A, KeyCode::S, KeyCode::D);
+
+	this->addChild(controller2);
+	controller2->position = Point2(SWIDTH / 4, SHEIGHT / 4 * 3);
 	
 
 	
@@ -40,13 +40,21 @@ MyScene::MyScene() : Scene()
 	
 
 
-	
-
-	
-
 	beyBlade = new BeyBlade();
 	beyBlade->position = Point2(SWIDTH / 3 *2.5, SHEIGHT / 2);
 	this->addChild(beyBlade);
+	controller1->SetBeyBlade(beyBlade);
+	beyBlade->sprite()->color = RED;
+
+
+	beyBlade1 = new BeyBlade();
+	beyBlade1->position = Point2(SWIDTH / 3, SHEIGHT / 2);
+	this->addChild(beyBlade1);
+	controller2->SetBeyBlade(beyBlade1);
+	beyBlade1->sprite()->color = BLUE;
+
+	Vector2 diff;
+
 	//angle = static_cast<float>(rand()) / RAND_MAX * 2 * PI;
 
 }	
@@ -67,14 +75,27 @@ MyScene::~MyScene()
 void MyScene::update(float deltaTime)
 {
 
+	Vector2	diff = beyBlade->position - beyBlade1->position;
 
-	// Supposed to make beyblade go in a random direction in the beginning 
+	float distance = diff.getLength();
+	Vector2 bsize = beyBlade->sprite()->size;
+
+	if (distance < bsize.y / 2) {
+		beyBlade->velocity *= -1;
+		beyBlade1->velocity *= -1;
+		beyBlade->rotationSpeed -= 0.1;
+		beyBlade1->rotationSpeed -= 0.1;
+
+
+	}
+
+	// Supposed to make beybade go in a random direction in the beginning 
 	/*beyBlade->position.x += speedx * cos(angle) * deltaTime;
 	beyBlade->position.y += speedy * sin(angle) * deltaTime;*/
 
 	// beyBlade becomes smaller while hovering over it
 
-	int mousex = input()->getMouseX() + camera()->position.x - SWIDTH / 2;
+	/*int mousex = input()->getMouseX() + camera()->position.x - SWIDTH / 2;
 	int mousey = input()->getMouseY() + camera()->position.y - SHEIGHT / 2;
 	Point2 mouse = Point2(mousex, mousey);
 	
@@ -87,9 +108,8 @@ void MyScene::update(float deltaTime)
 	if (distance < bsize.y/2)
 	{
 		beyBlade->scale = Vector2(0.5f, 0.5f);
-	}
+	}*/
 
-	std::cout <<"Hi" << SWIDTH << SHEIGHT<< "Hi";
 
 	// Beyblade Bounces against walls
 
@@ -112,11 +132,10 @@ void MyScene::update(float deltaTime)
 	/*int posX = beyBlade->scale.x;
 	int posY = beyBlade->scale.y;*/
 
-	if (controller1->increaseRotation) 
-	{
-		beyBlade->rotationSpeed += 0.001;
-	}
-	std::cout << beyBlade->rotationSpeed;
+	//if (controller1->increaseRotation) 
+	//{
+	//	beyBlade->rotationSpeed += 0.001;
+	//}
 
 
 //	Vector2 diff2 = c->position - this->position;

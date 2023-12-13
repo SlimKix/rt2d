@@ -18,7 +18,7 @@ class Controller: public Entity
 
 
 public:
-	Controller();
+	Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey);
 	virtual ~Controller();
 
 	bool increaseRotation;
@@ -28,9 +28,10 @@ public:
 
 
 
-
+	
 	virtual void update(float deltaTime);
 
+	void SetBeyBlade(BeyBlade* bb);
 
 private:
 	float acceleration;
@@ -39,6 +40,11 @@ private:
 	Controller* controller;
 	JoyStick* joyStick;
 	BeyBlade* beyBlade;
+
+	KeyCode upKey_;
+	KeyCode leftKey_;
+	KeyCode downKey_;
+	KeyCode rightKey_;
 };
 
 #endif /* CONTROLLER_H */
