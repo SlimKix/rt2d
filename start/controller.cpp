@@ -7,7 +7,7 @@ Vector2 yAccel = Vector2(0, 400.0f);
 Vector2 xAccel = Vector2(400.0f, 0);
 
 
-Controller::Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey) : Entity()
+Controller::Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey, RGBAColor col) : Entity()
 {
 	
 	Line c1;
@@ -28,6 +28,8 @@ Controller::Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode 
     downKey_ = downKey;
     rightKey_ = rightKey;
 
+    joyStick->sprite()->color = col;
+
     /*beyBlade = new BeyBlade();
     beyBlade->position = Point2(SWIDTH / 3 * 2.5, SHEIGHT / 2);
     this->addChild(beyBlade);*/
@@ -36,7 +38,9 @@ Controller::Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode 
 
 Controller::~Controller()
 {
+    this->removeChild(joyStick);
 
+    delete joyStick;
 }
 
 void Controller::SetBeyBlade(BeyBlade* bb)
@@ -105,10 +109,9 @@ void Controller::update(float deltaTime)
     }
     if (increaseRotation)
     {
-        beyBlade->rotationSpeed += 0.10;
+        beyBlade->rotationSpeed += 0.01;
     }
 
-    std::cout << "rotation speed" << beyBlade->rotationSpeed;
 
 
     // Ball goes random direction constantly

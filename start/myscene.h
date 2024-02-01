@@ -11,11 +11,14 @@
 
 #include <vector>
 #include <rt2d/scene.h>
-#include <rt2d/text.h>
 #include "beyblade.h"
 #include "controller.h"
 #include "collider.h"
 #include "joystick.h"
+#include "canvas.h"
+#include "menu.h"
+
+
 
 
 
@@ -33,10 +36,12 @@ public:
 	/// @return void
 	virtual void update(float deltaTime);
 
+	bool isPaused;
+
+
 protected:
 	//unsigned int top_layer;
 	//std::vector<MyEntity*> layers;
-	Text* text;
 	float angle;
 
 private:
@@ -45,6 +50,12 @@ private:
 	BeyBlade* beyBlade1;
 	Controller* controller1;
 	Controller* controller2;
+	Canvas* score;
+	Menu* menu;
+	
+	
+	int p1Score;
+	int p2Score;
 
 
 	/// @brief a Timer to rotate the color every n seconds

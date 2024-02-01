@@ -16,7 +16,7 @@ class BeyBlade : public Entity
 {
 public:
 	/// @brief Constructor
-	BeyBlade();
+	BeyBlade(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey);
 	/// @brief Destructor
 	virtual ~BeyBlade();
 
@@ -25,14 +25,24 @@ public:
 	/// @return void
 	virtual void update(float deltaTime);
 	//float angle;
+	float initialRotationSpeed;
+	float speed;
+
 	float rotationSpeed;
 	float friction;
+
+
 	Vector2 velocity;
 	Vector2 bSize;
 
 
 private:
 	/* add your private declarations */
+
+	KeyCode upKey_;
+	KeyCode leftKey_;
+	KeyCode downKey_;
+	KeyCode rightKey_;
 };
 
 #endif /* MYENTITY_H */

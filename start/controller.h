@@ -18,7 +18,7 @@ class Controller: public Entity
 
 
 public:
-	Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey);
+	Controller(KeyCode upKey, KeyCode leftKey, KeyCode downKey, KeyCode rightKey, RGBAColor col);
 	virtual ~Controller();
 
 	bool increaseRotation;
@@ -45,6 +45,8 @@ private:
 	KeyCode leftKey_;
 	KeyCode downKey_;
 	KeyCode rightKey_;
+
+	RGBAColor col_;
 };
 
 #endif /* CONTROLLER_H */
